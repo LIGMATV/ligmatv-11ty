@@ -1,0 +1,35 @@
+---
+layout: layouts/default.njk
+title: My Rad Blog
+description: This website is just for demoing a template powered by 11ty.
+date: 2016-01-01
+---
+
+<aside class="row right padding-right large-padding">
+    <a href="https://raw.githubusercontent.com/{{ site.ghRepo }}/main/src/posts/{{ page.fileSlug }}.md" class="circle button transparent" aria-describedby="_tooltip-source">
+        <i>code</i>
+        <div class="tooltip bottom" id="_tooltip-source">View source of this page</div>
+    </a>
+    <a href="https://github.com/{{ site.ghRepo }}/edit/main/src/posts/{{ page.fileSlug }}.md" class="circle button transparent" aria-describedby="_tooltip-edit">
+        <i>edit</i>
+        <div class="tooltip bottom" id="_tooltip-edit">Edit this page</div>
+    </a>
+</aside>
+
+<div class="space"></div>
+
+<h1>{{ title }}</h1>
+<p>{{ description }}</p>
+<p>{{ date | date }} - by {{ site.author }} </p>
+<nav class="gap-sm">
+    {% for tag in tags %}
+    <a class="btn chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
+    {% endfor %}
+</nav>
+
+<div class="large-space"></div>
+<hr>
+
+<article class="post transparent">
+    {{ content | safe }}
+</article>

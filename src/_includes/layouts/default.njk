@@ -1,0 +1,12 @@
+---
+layout: layouts/base.njk
+---
+
+{% include "components/menu.njk" %}
+<main class="responsive">
+  {{ content | safe }}
+</main>
+{% include "components/dialog-posts.njk" %}
+{% include "components/dialog-tags.njk" %}
+{% include "components/themes.njk" %}
+{% include "components/footer.njk" %}

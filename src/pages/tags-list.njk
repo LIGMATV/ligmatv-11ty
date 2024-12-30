@@ -1,0 +1,22 @@
+---
+permalink: /tags/index.html
+layout: layouts/default.njk
+title: "All tags"
+description: All the tags i used for the posts in this website.
+---
+
+<div class="large-space"></div>
+<h1>{{ title }}</h1>
+<div class="space"></div>
+
+<article class="no-padding" style="overflow: hidden;">
+  {% for tag in collections.tagsList %}
+    <a class="row wave padding" href="/tags/{{ tag | slug }}/">
+      <i>tag</i>
+      <div class="max">
+        <h6 class="small">{{ tag }}</h6>
+      </div>
+    </a>
+    <hr>
+  {% endfor %}
+</article>

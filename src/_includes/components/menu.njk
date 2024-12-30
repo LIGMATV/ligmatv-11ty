@@ -1,0 +1,20 @@
+<nav class="m l left">
+    <header>
+        {% include "components/profile.njk" %}
+    </header>
+    {% for item in site.menuItems %}
+    <a {% if item.url %}href="{{ item.url }}"{% endif %}>
+        <i>{{ item.icon }}</i>
+        <span>{{ item.title }}</span>
+    </a>
+    {% endfor %}
+</nav>
+
+<nav class="s bottom">
+    {% for item in site.menuItems %}
+    <a {% if item.url %}href="{{ item.url }}"{% endif %} {% if item.dataUI %}data-ui="{{ item.dataUI }}"{% endif %}>
+        <i>{{ item.icon }}</i>
+        <span>{{ item.title }}</span>
+    </a>
+    {% endfor %}
+</nav>
